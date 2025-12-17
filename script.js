@@ -1,38 +1,43 @@
-/* ================= MOBILE MENU ================= */
-const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+/* =========================
+   MENÚ MÓVIL
+========================= */
+const mobileToggle = document.getElementById("mobile-menu-toggle");
 const mainNav = document.getElementById("main-nav");
 
-if (mobileMenuToggle && mainNav) {
-  mobileMenuToggle.addEventListener("click", () => {
+if (mobileToggle) {
+  mobileToggle.addEventListener("click", () => {
     mainNav.classList.toggle("active");
   });
 
-  // Cerrar menú al hacer click en un enlace
-  mainNav.querySelectorAll("a").forEach(link => {
+  // Cerrar menú al hacer clic en un enlace
+  const navLinks = mainNav.querySelectorAll("a");
+  navLinks.forEach(link => {
     link.addEventListener("click", () => {
       mainNav.classList.remove("active");
     });
   });
 }
 
-/* ================= HEADER SCROLL EFFECT ================= */
+/* =========================
+   EFECTO HEADER AL SCROLL
+========================= */
 const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 80) {
-    header.style.background = "rgba(10,10,10,0.98)";
-    header.style.height = "70px";
+    header.style.boxShadow = "0 4px 12px rgba(0,0,0,0.4)";
   } else {
-    header.style.background = "rgba(10,10,10,0.95)";
-    header.style.height = "80px";
+    header.style.boxShadow = "none";
   }
 });
 
-/* ================= CONTACT FORM → WHATSAPP ================= */
-const contactForm = document.getElementById("contact-form");
+/* =========================
+   FORMULARIO → WHATSAPP
+========================= */
+const form = document.getElementById("contact-form");
 
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
+if (form) {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const name = document.getElementById("name").value;
@@ -40,63 +45,47 @@ if (contactForm) {
     const phone = document.getElementById("phone").value;
     const message = document.getElementById("message").value;
 
-    const whatsappMessage = `
-*Nueva consulta desde la web JMAC*
+    const text = `
+*Nuevo contacto desde JMAC*
 
-*Nombre:* ${name}
-*Email:* ${email}
-*Teléfono:* ${phone}
+👤 Nombre: ${name}
+📧 Email: ${email}
+📱 Teléfono: ${phone}
 
-*Mensaje:*
+📝 Mensaje:
 ${message}
-    `.trim();
+    `;
 
-    const whatsappURL = `https://wa.me/593960902706?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
+    const whatsappURL = `https://wa.me/593960902706?text=${encodeURIComponent(text)}`;
 
     window.open(whatsappURL, "_blank");
-    contactForm.reset();
+    form.reset();
   });
 }
 
-/* ================= SMOOTH SCROLL ================= */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  });
-});
-
-/* ================= SCROLL ANIMATIONS ================= */
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  {
-    threshold: 0.1
-  }
+/* =========================
+   ANIMACIONES SUAVES
+========================= */
+const animatedElements = document.querySelectorAll(
+  ".service-card, .stat-number, .grid-two img, .clients-grid img, .contact-form-container"
 );
 
-document.querySelectorAll(
-  ".service-card, .grid-two img, .contact-form-container"
-).forEach(el => {
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+animatedElements.forEach(el => {
   el.style.opacity = "0";
   el.style.transform = "translateY(30px)";
   el.style.transition = "all 0.6s ease";
   observer.observe(el);
 });
 
-/* ================= DEBUG ================= */
-console.log("JMAC Website loaded correctly");
+/
