@@ -89,3 +89,30 @@ document.querySelectorAll(
 
 /* ================= DEBUG ================= */
 console.log("JMAC site loaded correctly");
+@media (max-width: 768px) {
+  .logo-centered img {
+    height: 60px;
+  }
+
+  .nav-centered {
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+  }
+
+  .nav-centered.active {
+    display: flex;
+  }
+
+  #mobile-menu-toggle {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+  }
+}
