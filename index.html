@@ -1,216 +1,160 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <title>JMAC | Servicios Petroleros e Instrumentación Industrial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>JMAC Instrumentación Industrial</title>
-
-  <meta name="description" content="JMAC Instrumentación Industrial – Construcción, parametrización, mantenimiento y comisionado de sistemas industriales y petroleros en Ecuador."/>
-  <meta name="keywords" content="instrumentación industrial, calibración, mantenimiento, comisionado, PLC, tableros, sector petrolero Ecuador"/>
-
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header class="header">
-  <div class="container header-center">
-    <img src="assets/img/logo-jmac.png" alt="JMAC Instrumentación Industrial" class="logo-main">
-    <nav class="nav">
+  <div class="container header-flex">
+    <img src="assets/img/logo-jmac.png" class="logo" alt="JMAC">
+    <nav>
       <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#nosotros">Nosotros</a>
-      <a href="#clientes">Clientes</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
-  <img src="assets/img/hero.jpg" class="hero-bg" alt="JMAC Instrumentación Industrial">
   <div class="hero-overlay"></div>
-  <div class="hero-content container">
-    <h1>Instrumentación Industrial</h1>
-    <p>
-      Construcción, parametrización, mantenimiento y comisionado de sistemas industriales
-      con más de 15 años de experiencia en el sector petrolero.
-    </p>
+  <img src="assets/img/hero.jpg" class="hero-bg">
+
+  <div class="hero-content">
+    <img src="assets/img/logo-jmac.png" class="hero-logo">
+    <h1>Soluciones Integrales en Servicios Petroleros</h1>
+    <p>Instrumentación, construcción, mantenimiento y puesta en marcha industrial</p>
 
     <div class="hero-buttons">
-      <a href="#contacto" class="btn-primary">Contáctanos</a>
-      <a href="assets/docs/brochure-jmac.pdf" target="_blank" class="btn-outline">
-        Descargar Brochure
-      </a>
+      <a href="#contacto" class="btn-primary">Solicitar Cotización</a>
+      <a href="assets/docs/brochure-jmac.pdf" class="btn-outline" target="_blank">Descargar Brochure</a>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVICIOS ================= -->
+<!-- SERVICIOS -->
 <section id="servicios" class="section">
-  <div class="container">
-    <h2 class="section-title">Servicios Especializados</h2>
+  <h2 class="section-title">Servicios Especializados</h2>
 
-    <!-- Instrumentación -->
-    <div class="service-block">
+  <div class="cards">
+    <div class="card">
+      <img src="assets/img/servicio1.jpg">
       <h3>Instrumentación Industrial</h3>
-      <p>
-        Configuración de instrumentos de medición y control como sensores,
-        controladores y actuadores de campo, aplicados a procesos de lazo cerrado.
-        Integración de sensores y actuadores a sistemas de adquisición de datos
-        y control de procesos.
-      </p>
-      <p>
-        Trabajamos con equipos E&H, Siemens, ABB, ASCO, Rosemount, entre otros.
-      </p>
-      <div class="image-placeholder">Espacio para imágenes de Instrumentación</div>
+      <p>Configuración, integración y control de procesos industriales.</p>
     </div>
 
-    <!-- Parametrización -->
-    <div class="service-block">
-      <h3>Parametrización</h3>
-      <p>
-        Parametrización y puesta en servicio de instrumentos de control y medición,
-        válvulas de control porcentual y ON/OFF.
-        Reporte de equipos averiados.
-      </p>
-      <div class="image-placeholder">Espacio para imágenes de Parametrización</div>
+    <div class="card">
+      <img src="assets/img/servicio2.jpg">
+      <h3>Parametrización & Puesta en Servicio</h3>
+      <p>Válvulas, sensores, PLC, JB, RIOs y lazos de control.</p>
     </div>
 
-    <!-- Mantenimiento -->
-    <div class="service-block">
-      <h3>Mantenimiento</h3>
-      <p>
-        Mantenimiento de instrumentos de medición y control, sensores,
-        controladores y actuadores de campo.
-        Supervisión y soporte durante la instalación en campo.
-      </p>
-      <div class="image-placeholder">Espacio para imágenes de Mantenimiento</div>
+    <div class="card">
+      <img src="assets/img/servicio3.jpg">
+      <h3>Mantenimiento Industrial</h3>
+      <p>Preventivo y correctivo con soporte en campo.</p>
     </div>
 
-    <!-- Construcción -->
-    <div class="service-block">
+    <div class="card">
+      <img src="assets/img/servicio1.jpg">
       <h3>Construcción y Montaje</h3>
-      <ul>
-        <li>Construcción y ampliación de plantas industriales</li>
-        <li>Plataformas de producción petrolera</li>
-        <li>Inyección de agua y pasivos ambientales</li>
-        <li>Plantas de producción de nitrógeno y oxígeno</li>
-        <li>Instalación de bandejas porta cables</li>
-        <li>Tendido de cable y montaje de tableros</li>
-      </ul>
-      <div class="image-placeholder">Espacio para imágenes de Construcción</div>
+      <p>Plantas, bandejas portacables, cableado y tableros.</p>
     </div>
 
-    <!-- Tableros -->
-    <div class="service-block">
+    <div class="card">
+      <img src="assets/img/servicio2.jpg">
       <h3>Elaboración de Tableros</h3>
-      <p>
-        Tableros de control (PLC, JB, RIOs) con reemplazo de sistemas obsoletos,
-        modernización de equipos y reducción del tiempo de parada de planta.
-      </p>
-      <div class="image-placeholder">Espacio para imágenes de Tableros</div>
+      <p>PLC, JB, RIOs, modernización y migración de sistemas.</p>
     </div>
 
-    <!-- Comisionado -->
-    <div class="service-block">
+    <div class="card">
+      <img src="assets/img/servicio3.jpg">
       <h3>Asistencia al Comisionado</h3>
-      <p>
-        Soporte técnico telefónico y presencial durante el pre-comisionado
-        y comisionado de plantas industriales.
-      </p>
-      <div class="image-placeholder">Espacio para imágenes de Comisionado</div>
+      <p>Soporte técnico presencial y remoto 24/7.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= PROYECTOS ================= -->
+<!-- PROYECTOS -->
 <section id="proyectos" class="section dark">
-  <div class="container">
-    <h2 class="section-title">Proyectos Ejecutados</h2>
-    <p>
-      Más de 15 años de experiencia en proyectos industriales y petroleros
-      a nivel nacional.
-    </p>
-    <div class="image-placeholder">Galería de Proyectos (brochure)</div>
+  <h2 class="section-title light">Proyectos Realizados</h2>
+
+  <div class="gallery">
+    <img src="assets/img/proyecto1.jpg">
+    <img src="assets/img/proyecto2.jpg">
+    <img src="assets/img/servicio1.jpg">
+    <img src="assets/img/servicio2.jpg">
   </div>
 </section>
 
-<!-- ================= NOSOTROS ================= -->
+<!-- NOSOTROS -->
 <section id="nosotros" class="section">
-  <div class="container">
-    <h2 class="section-title">¿Quiénes Somos?</h2>
-    <p>
-      JMAC es una unidad de negocios dedicada a la construcción,
-      parametrización y mantenimiento de equipos de control y medición industrial.
-    </p>
-
-    <p>
-      Contamos con un equipo multidisciplinario en constante capacitación,
-      trabajando bajo normas NTE INEN, ISO/IEC 17020:2013, NEMA 250,
-      IEC 61439-1/-2/-3 e IEC 61131.
-    </p>
-
-    <h3>Misión</h3>
-    <p>
-      Diseñar y construir con excelencia, creando fuentes de trabajo
-      y contribuyendo al progreso del país.
-    </p>
-
-    <h3>Visión</h3>
-    <p>
-      Impulsar la producción industrial con un equipo humano profesional,
-      íntegro y comprometido.
-    </p>
-
-    <h3>Valores</h3>
-    <p>
-      Calidad humana, iniciativa, eficiencia, honestidad, trabajo en equipo
-      y compromiso.
-    </p>
-  </div>
-</section>
-
-<!-- ================= CLIENTES ================= -->
-<section id="clientes" class="section dark">
-  <div class="container center">
-    <h2 class="section-title">Nuestros Clientes</h2>
-    <div class="clients-grid">
-      <img src="assets/img/clientes/cliente1.png" alt="Cliente">
-      <img src="assets/img/clientes/cliente2.png" alt="Cliente">
-      <!-- agrega más logos aquí -->
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONTACTO ================= -->
-<section id="contacto" class="section">
-  <div class="container contact-grid">
+  <div class="two-columns">
     <div>
-      <h2 class="section-title">Contáctanos</h2>
+      <h2>¿Quiénes Somos?</h2>
+      <p>
+        JMAC es una empresa especializada en servicios petroleros e instrumentación industrial,
+        con más de 15 años de experiencia ejecutando proyectos críticos con altos estándares
+        de calidad, seguridad y confiabilidad.
+      </p>
+
+      <ul class="values">
+        <li>✔ Experiencia comprobada</li>
+        <li>✔ Cumplimiento normativo</li>
+        <li>✔ Personal certificado</li>
+        <li>✔ Respuesta inmediata</li>
+      </ul>
+    </div>
+
+    <img src="assets/img/proyecto1.jpg">
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section class="section">
+  <h2 class="section-title">Clientes & Marcas</h2>
+  <div class="clients">
+    <img src="assets/img/cliente1.png">
+    <img src="assets/img/cliente2.png">
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section dark">
+  <h2 class="section-title light">Contacto</h2>
+
+  <div class="contact-grid">
+    <div>
       <p><strong>Teléfono:</strong> +593 96 090 2706</p>
       <p><strong>Email:</strong> oficina@jmac.com.ec</p>
       <p><strong>Ubicación:</strong> Ecuador</p>
     </div>
 
-    <form id="contact-form">
+    <form class="contact-form">
       <input type="text" placeholder="Nombre" required>
       <input type="email" placeholder="Correo" required>
-      <input type="text" placeholder="Teléfono">
       <textarea placeholder="Mensaje"></textarea>
-      <button type="submit" class="btn-primary">Enviar por WhatsApp</button>
+      <button class="btn-primary">Enviar</button>
     </form>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="footer">
-  <img src="assets/img/logo-jmac.png" class="footer-logo" alt="JMAC">
+  <img src="assets/img/logo-jmac.png">
   <p>© 2025 JMAC Instrumentación Industrial</p>
 </footer>
 
-<a href="https://wa.me/593960902706" class="whatsapp-float" target="_blank"></a>
+<a href="https://wa.me/593960902706" class="whatsapp">WhatsApp</a>
 
 <script src="script.js"></script>
 </body>
