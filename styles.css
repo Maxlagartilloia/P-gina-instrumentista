@@ -60,49 +60,62 @@ body {
 }
 
 /* ================= HEADER ================= */
-header {
+#header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
   background: rgba(0,0,0,0.95);
+  z-index: 1000;
 }
 
-.header-content {
+.header-centered {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
+  padding: 18px 20px 12px;
 }
 
-.logo img {
-  height: 45px;
+/* LOGO GRANDE Y CENTRADO */
+.logo-centered img {
+  height: 78px; /* tamaño elegante */
+  max-width: 240px;
+  object-fit: contain;
+  margin-bottom: 12px;
 }
 
-nav {
+/* NAV CENTRADO */
+.nav-centered {
   display: flex;
-  gap: 2rem;
+  gap: 28px;
 }
 
-nav a {
-  color: #fff;
+.nav-centered a {
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
+  font-size: 15px;
+  position: relative;
 }
 
-nav a:hover {
-  color: var(--primary);
+.nav-centered a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f57c00;
+  transition: width 0.3s ease;
 }
 
-#mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.8rem;
-  cursor: pointer;
+.nav-centered a:hover::after {
+  width: 100%;
 }
 
+/* ESPACIO PARA HERO */
+body {
+  padding-top: 140px;
+}
 /* ================= HERO ================= */
 .hero {
   position: relative;
