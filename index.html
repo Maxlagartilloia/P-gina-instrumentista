@@ -1,207 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JMAC Instrumentación Industrial</title>
 
-  <title>JMAC Instrumentación Industrial | Servicios Petroleros</title>
-
-  <meta name="description" content="JMAC es una empresa ecuatoriana especializada en instrumentación industrial, mantenimiento, construcción y servicios petroleros con altos estándares de seguridad y calidad." />
-  <meta name="keywords" content="instrumentación industrial, servicios petroleros, mantenimiento industrial, Ecuador, JMAC" />
-
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header class="header">
-  <div class="container header-content">
-    <img src="assets/img/logo-jmac.png" alt="JMAC Instrumentación Industrial" class="logo">
-
-    <nav class="nav">
+  <div class="container header-inner">
+    <img src="assets/img/logo-jmac.png" class="logo" alt="JMAC">
+    <nav>
       <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
-      <a href="#nosotros">Nosotros</a>
       <a href="#clientes">Clientes</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
-  <img src="assets/img/hero.jpg" alt="Planta Petrolera" class="hero-bg">
+  <img src="assets/img/hero/hero.jpg" class="hero-bg">
   <div class="hero-overlay"></div>
-
   <div class="hero-content">
-    <img src="assets/img/logo-jmac.png" alt="JMAC Logo" class="hero-logo">
-
-    <h1>Soluciones Integrales en Instrumentación y Servicios Petroleros</h1>
-    <p>
-      Precisión, seguridad y confiabilidad para operaciones industriales críticas
-      en el sector petrolero e industrial.
-    </p>
-
+    <img src="assets/img/logo-jmac.png" class="hero-logo">
+    <h1>Instrumentación y Control Industrial</h1>
+    <p>Precisión, seguridad y confiabilidad para la industria petrolera</p>
     <div class="hero-buttons">
-      <a href="#contacto" class="btn-primary">Solicitar Cotización</a>
-      <a href="assets/docs/brochure-jmac.pdf" target="_blank" class="btn-outline">
-        Descargar Brochure
-      </a>
+      <a href="#contacto" class="btn">Contáctanos</a>
+      <a href="assets/docs/BROCHURE_JMac.pdf" target="_blank" class="btn outline">Descargar Brochure</a>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVICIOS ================= -->
+<!-- SERVICIOS -->
 <section id="servicios" class="section">
-  <h2 class="section-title">Servicios Especializados</h2>
+  <h2>Servicios Especializados</h2>
 
-  <div class="services-grid">
+  <div class="grid">
 
-    <div class="service-card">
-      <img src="assets/img/servicios/servicio1.jpg" alt="Instrumentación Industrial">
+    <div class="card" onclick="openModal('assets/img/servicios/servicio1.jpg')">
+      <img src="assets/img/servicios/servicio1.jpg">
       <h3>Instrumentación Industrial</h3>
-      <p>
-        Configuración, calibración y puesta en marcha de instrumentos de presión,
-        temperatura, nivel y flujo.
-      </p>
     </div>
 
-    <div class="service-card">
-      <img src="assets/img/servicios/servicio2.jpg" alt="Mantenimiento Industrial">
-      <h3>Mantenimiento Industrial</h3>
-      <p>
-        Mantenimiento preventivo y correctivo de sistemas de instrumentación
-        y control en campo petrolero.
-      </p>
+    <div class="card" onclick="openModal('assets/img/servicios/servicio2.jpg')">
+      <img src="assets/img/servicios/servicio2.jpg">
+      <h3>Parametrización</h3>
     </div>
 
-    <div class="service-card">
-      <img src="assets/img/servicios/servicio3.jpg" alt="Construcción Industrial">
-      <h3>Construcción y Montaje</h3>
-      <p>
-        Montaje industrial, bandejas portacables, tuberías, tableros eléctricos
-        y estructuras metálicas.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <img src="assets/img/servicios/servicio4.jpg" alt="Comisionamiento">
-      <h3>Comisionamiento</h3>
-      <p>
-        Soporte técnico especializado durante la puesta en marcha
-        y arranque de plantas industriales.
-      </p>
+    <div class="card" onclick="openModal('assets/img/servicios/servicio3.jpg')">
+      <img src="assets/img/servicios/servicio3.jpg">
+      <h3>Mantenimiento</h3>
     </div>
 
   </div>
 </section>
 
-<!-- ================= PROYECTOS ================= -->
+<!-- PROYECTOS -->
 <section id="proyectos" class="section dark">
-  <h2 class="section-title">Proyectos Ejecutados</h2>
+  <h2>Proyectos Ejecutados</h2>
 
-  <div class="gallery-grid">
-    <!-- NUEVAS -->
-    <img src="assets/img/proyectos/proyecto1.jpg" class="gallery-img" alt="Proyecto JMAC">
-    <img src="assets/img/proyectos/proyecto2.jpg" class="gallery-img" alt="Proyecto JMAC">
-    <img src="assets/img/proyectos/proyecto3.jpg" class="gallery-img" alt="Proyecto JMAC">
-
-    <!-- ANTIGUAS (NO SE TOCAN) -->
-    <img src="assets/img/legacy/img_old1.jpg" class="gallery-img" alt="Proyecto JMAC">
-    <img src="assets/img/legacy/img_old2.jpg" class="gallery-img" alt="Proyecto JMAC">
+  <div class="grid">
+    <img src="assets/img/proyectos/proyecto1.jpg" onclick="openModal(this.src)">
+    <img src="assets/img/proyectos/proyecto2.jpg" onclick="openModal(this.src)">
+    <img src="assets/img/proyectos/proyecto3.jpg" onclick="openModal(this.src)">
   </div>
 </section>
 
-<!-- ================= MODAL ================= -->
-<div id="image-modal">
-  <span id="close-modal">&times;</span>
-  <img id="modal-img" alt="Imagen ampliada">
+<!-- CLIENTES -->
+<section id="clientes" class="section">
+  <h2>Nuestros Clientes</h2>
+  <div class="clientes">
+    <img src="assets/img/clientes/cliente1.png">
+    <img src="assets/img/clientes/cliente2.png">
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section">
+  <h2>Contacto</h2>
+  <p><strong>Tel:</strong> +593 96 090 2706</p>
+  <p><strong>Email:</strong> oficina@jmac.com.ec</p>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <img id="modal-img">
 </div>
 
-<!-- ================= NOSOTROS ================= -->
-<section id="nosotros" class="section">
-  <h2 class="section-title">Quiénes Somos</h2>
-
-  <div class="about-grid">
-    <div class="about-text">
-      <p>
-        JMAC es una empresa ecuatoriana con más de 15 años de experiencia en
-        instrumentación industrial, mantenimiento, construcción y servicios
-        especializados para el sector petrolero.
-      </p>
-
-      <p>
-        Nuestro equipo técnico opera bajo estrictos estándares de seguridad,
-        calidad y cumplimiento normativo, garantizando soluciones confiables
-        y eficientes en cada proyecto ejecutado.
-      </p>
-    </div>
-
-    <img src="assets/img/equipo.jpg" alt="Equipo Técnico JMAC">
-  </div>
-
-  <div class="mvv-grid">
-    <div class="mvv-card">
-      <h3>Misión</h3>
-      <p>
-        Brindar soluciones industriales seguras, eficientes y confiables,
-        contribuyendo al desarrollo del sector petrolero.
-      </p>
-    </div>
-
-    <div class="mvv-card">
-      <h3>Visión</h3>
-      <p>
-        Ser una empresa referente a nivel nacional en servicios de
-        instrumentación y soporte industrial petrolero.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CLIENTES ================= -->
-<section id="clientes" class="section dark">
-  <h2 class="section-title">Marcas y Clientes</h2>
-
-  <div class="clients-grid">
-    <img src="assets/img/clientes/cliente1.png" alt="Cliente">
-    <img src="assets/img/clientes/cliente2.png" alt="Cliente">
-    <img src="assets/img/clientes/cliente3.png" alt="Cliente">
-    <img src="assets/img/clientes/cliente4.png" alt="Cliente">
-  </div>
-</section>
-
-<!-- ================= CONTACTO ================= -->
-<section id="contacto" class="section">
-  <h2 class="section-title">Contacto</h2>
-
-  <div class="contact-grid">
-    <div class="contact-info">
-      <p><strong>Teléfono:</strong> +593 96 090 2706</p>
-      <p><strong>Email:</strong> oficina@jmac.com.ec</p>
-      <p><strong>Ubicación:</strong> Ecuador</p>
-    </div>
-
-    <form class="contact-form">
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo" required>
-      <textarea placeholder="Mensaje" rows="4"></textarea>
-      <button type="submit" class="btn-primary">Enviar Mensaje</button>
-    </form>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <img src="assets/img/logo-jmac.png" alt="JMAC" class="footer-logo">
-  <p>© 2025 JMAC Instrumentación Industrial · Todos los derechos reservados</p>
-</footer>
-
-<!-- ================= WHATSAPP ================= -->
-<a href="https://wa.me/593960902706" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-  WA
-</a>
-
-<script src="assets/js/gallery.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
