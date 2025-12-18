@@ -6,7 +6,7 @@
     <title>JMAC | Servicios de Instrumentación & Control Industrial</title>
     <meta name="description" content="JMAC: Construcción, parametrización y mantenimiento de equipos de control y medición industrial. Expertos en CCM, Instrumentación y Montaje.">
 
-    <!-- Fuentes: Montserrat (Títulos Fuertes) y Inter (Cuerpo Técnico) -->
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
@@ -17,13 +17,13 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Configuración Estilos Industrial Dark -->
+    <!-- Estilos -->
     <style>
         :root {
-            --color-dark: #0f1115;      /* Fondo Principal */
-            --color-panel: #181b21;     /* Paneles */
-            --color-accent: #e6a524;    /* Dorado Industrial (Seguridad) */
-            --color-text: #e0e0e0;      /* Texto Leíble */
+            --color-dark: #0f1115;
+            --color-panel: #181b21;
+            --color-accent: #e6a524;
+            --color-text: #e0e0e0;
         }
 
         body {
@@ -36,7 +36,7 @@
 
         h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
 
-        /* Scrollbar Personalizado */
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--color-dark); }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
@@ -45,48 +45,44 @@
         /* --- Hero Section --- */
         .hero-bg {
             background-color: #0b0d11;
-            /* IMPORTANTE: Tu imagen de fondo debe llamarse 'fondo-hero.jpg' */
-            background-image: linear-gradient(rgba(11, 13, 17, 0.85), rgba(11, 13, 17, 0.7)), url('fondo-hero.jpg');
+            /* Fondo más limpio */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('fondo-hero.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        .accent-line { width: 60px; height: 4px; background-color: var(--color-accent); margin: 1.5rem 0; }
+        .accent-line { width: 60px; height: 4px; background-color: var(--color-accent); margin: 2rem 0; }
 
-        /* --- Cards Servicios --- */
+        /* --- Cards --- */
         .card-service {
             background: linear-gradient(145deg, #1e2229, #16191f);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
         }
         .card-service:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--color-accent);
             box-shadow: 0 10px 30px -10px rgba(230, 165, 36, 0.15);
         }
         .card-service:hover .icon-box { background-color: var(--color-accent); color: #000; }
-        .icon-box { transition: all 0.3s ease; }
-
-        /* --- Cards Misión/Visión --- */
-        .card-corp {
-            background-color: var(--color-panel);
-            border-left: 4px solid var(--color-accent);
-            transition: all 0.3s ease;
-        }
-        .card-corp:hover {
-            background-color: #22262e;
-            transform: translateX(5px);
-        }
+        .icon-box { transition: all 0.3s ease; border-radius: 50%; }
 
         /* --- Modal --- */
         .modal { opacity: 0; visibility: hidden; transition: all 0.3s ease-in-out; }
         .modal.active { opacity: 1; visibility: visible; }
-        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
+        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; border-radius: 20px; }
         .modal.active .modal-content { transform: scale(1); }
 
         /* --- Botones --- */
-        .btn-industrial { position: relative; overflow: hidden; transition: all 0.3s ease; z-index: 1; }
+        .btn-industrial { 
+            position: relative; 
+            overflow: hidden; 
+            transition: all 0.3s ease; 
+            z-index: 1; 
+            border-radius: 9999px; /* Redondo completo */
+        }
         .btn-industrial::before {
             content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
@@ -94,7 +90,7 @@
         }
         .btn-industrial:hover::before { left: 100%; }
 
-        /* --- WhatsApp Flotante --- */
+        /* --- WhatsApp --- */
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white;
             border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
@@ -102,179 +98,174 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
 
-        /* --- Animaciones --- */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
-        /* Placeholder imagen rota */
-        img { background-color: #1a1d24; text-align: center; color: #555; font-size: 10px; }
+        /* CORRECCIÓN LOGO: Forzar transparencia total */
+        img.logo-clean { 
+            background: transparent !important; 
+            background-color: transparent !important;
+            box-shadow: none !important; 
+            border: none !important; 
+            mix-blend-mode: normal;
+        }
+        
+        /* Asegurar contenedores sin fondo */
+        .nav-logo-container { background: transparent !important; }
     </style>
 </head>
 <body class="antialiased selection:bg-yellow-600 selection:text-white">
 
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 bg-black/80 backdrop-blur-md border-b border-white/5">
+    <!-- Navbar Transparente -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 bg-transparent border-b border-white/0">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             
-            <!-- LOGO SOLITARIO -->
-            <a href="#" class="block group">
-                <img src="logo.png" alt="JMAC Logo" class="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105" 
+            <!-- LOGO SIN FONDO -->
+            <a href="#" class="block group nav-logo-container">
+                <img src="logo.png" alt="JMAC Logo" 
+                     class="h-16 md:h-24 w-auto object-contain transition-transform group-hover:scale-105 logo-clean" 
                      onerror="alert('Por favor coloca el archivo logo.png en la carpeta de la web');">
             </a>
 
-            <!-- Menú Escritorio -->
-            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <a href="#nosotros" class="hover:text-yellow-500 transition-colors">LA EMPRESA</a>
-                <a href="#filosofia" class="hover:text-yellow-500 transition-colors">MISIÓN & VISIÓN</a>
-                <a href="#servicios" class="hover:text-yellow-500 transition-colors">SERVICIOS</a>
-                <a href="#contacto" class="hover:text-yellow-500 transition-colors">CONTACTO</a>
+            <!-- Menú Escritorio (Sin botón Cotizar) -->
+            <div class="hidden md:flex gap-10 text-sm font-medium tracking-wide">
+                <a href="#" class="text-white hover:text-yellow-500 transition-colors">INICIO</a>
+                <a href="#nosotros" class="text-white hover:text-yellow-500 transition-colors">LA EMPRESA</a>
+                <a href="#servicios" class="text-white hover:text-yellow-500 transition-colors">SERVICIOS</a>
+                <a href="#contacto" class="text-white hover:text-yellow-500 transition-colors">CONTACTO</a>
             </div>
 
-            <!-- Botón CTA -->
-            <a href="#contacto" class="hidden md:inline-block px-6 py-2 border border-yellow-500 text-yellow-500 font-semibold text-sm hover:bg-yellow-500 hover:text-black transition-all uppercase tracking-wider">
-                Solicitar Visita
-            </a>
-
-            <!-- Menú Hamburguesa Móvil -->
+            <!-- Menú Hamburguesa -->
             <button class="md:hidden text-2xl text-white" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
 
-    <!-- Menú Móvil Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-40 hidden flex-col items-center justify-center gap-8 text-xl font-heading">
+    <!-- Menú Móvil -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-40 hidden flex-col items-center justify-center gap-10 text-xl font-heading">
         <button class="absolute top-6 right-6 text-3xl text-gray-400" onclick="toggleMenu()">&times;</button>
+        <a href="#" onclick="toggleMenu()" class="hover:text-yellow-500">Inicio</a>
         <a href="#nosotros" onclick="toggleMenu()" class="hover:text-yellow-500">La Empresa</a>
-        <a href="#filosofia" onclick="toggleMenu()" class="hover:text-yellow-500">Filosofía</a>
         <a href="#servicios" onclick="toggleMenu()" class="hover:text-yellow-500">Servicios</a>
         <a href="#contacto" onclick="toggleMenu()" class="text-yellow-500">Contacto</a>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Espaciado y Badge Ajustados) -->
     <section class="hero-bg h-screen flex items-center justify-center relative px-6">
-        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#0f1115] to-transparent"></div>
         
-        <div class="max-w-5xl text-center z-10 pt-20">
-            <!-- Eslogan del Brochure -->
-            <div class="inline-block px-4 py-1 border border-yellow-500/50 rounded-full bg-yellow-500/10 backdrop-blur-sm mb-6 animate-pulse">
-                <span class="text-yellow-500 text-xs font-bold tracking-[0.3em] uppercase">TELL ME I'LL HELP YOU</span>
+        <div class="max-w-5xl text-center z-10 pt-28">
+            
+            <!-- BADGE PEQUEÑO -->
+            <div class="inline-block px-3 py-1 border border-yellow-500/40 rounded-full bg-yellow-500/5 backdrop-blur-sm mb-16 animate-pulse">
+                <span class="text-yellow-500 text-[10px] font-bold tracking-[0.2em] uppercase">TELL ME I'LL HELP YOU</span>
             </div>
             
-            <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+            <!-- Título -->
+            <h1 class="font-heading text-4xl md:text-7xl font-extrabold text-white mb-10 leading-tight drop-shadow-lg">
                 Ingeniería en <br> 
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-700">Control & Automatización</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Control & Automatización</span>
             </h1>
             
-            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
-                Construcción, parametrización y mantenimiento de equipos industriales bajo normas ISO/IEC y NEMA. Más de 15 años de experiencia.
+            <!-- Párrafo -->
+            <p class="text-gray-200 text-lg md:text-2xl max-w-3xl mx-auto mb-20 font-light leading-relaxed drop-shadow-md">
+                Construcción, parametrización y mantenimiento de equipos industriales bajo normas ISO/IEC y NEMA.
             </p>
             
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#contacto" class="btn-industrial bg-yellow-600 text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors">
+            <!-- Botones Redondos -->
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="#contacto" class="btn-industrial bg-yellow-600 text-black px-10 py-3 font-bold text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors shadow-lg shadow-yellow-600/20 rounded-full">
                     Contactar Ahora
                 </a>
-                <a href="#servicios" class="btn-industrial border border-white/30 bg-white/5 text-white px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-white/10 backdrop-blur-sm transition-colors flex items-center justify-center gap-2">
+                <a href="#servicios" class="btn-industrial border border-white/50 bg-black/20 text-white px-10 py-3 font-bold text-sm tracking-widest uppercase hover:bg-white/10 backdrop-blur-sm transition-colors flex items-center justify-center gap-3 rounded-full">
                     <i class="fa-solid fa-gears"></i> Ver Servicios
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- QUIENES SOMOS (Texto General) -->
-    <section id="nosotros" class="py-24 px-6 md:px-12 bg-[#0f1115]">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- QUIENES SOMOS -->
+    <section id="nosotros" class="py-32 px-6 md:px-12 bg-[#0f1115]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
             <div class="reveal">
-                <h4 class="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-2">Sobre JMAC</h4>
-                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-6">Soluciones integrales y eficientes.</h2>
+                <h4 class="text-yellow-500 font-bold uppercase tracking-widest text-xs mb-4">Sobre JMAC</h4>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-8">Soluciones integrales y eficientes.</h2>
                 <div class="accent-line"></div>
-                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
-                    Unidad de Negocios dedicada a la construcción, parametrización y mantenimiento de equipos de control y medición industrial. Contamos con un equipo multidisciplinario en constante capacitación y comunicación con las marcas líderes a nivel mundial.
+                <p class="text-gray-400 mb-8 leading-relaxed text-justify text-lg">
+                    Unidad de Negocios dedicada a la construcción, parametrización y mantenimiento de equipos de control y medición industrial. Contamos con un equipo multidisciplinario en constante capacitación.
                 </p>
-                <p class="text-gray-400 mb-8 leading-relaxed text-sm">
-                    Trabajamos de acuerdo con normas eléctricas nacionales <strong>NTE INEN ISO/IEC 17020:2013</strong> y estándares internacionales como <strong>NEMA 250</strong> e <strong>IEC 61131</strong>.
-                </p>
-
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="border-l-2 border-yellow-600 pl-4">
-                        <span class="block text-3xl font-bold text-white">+15</span>
-                        <span class="text-sm text-gray-500 uppercase">Años de Experiencia</span>
+                
+                <div class="grid grid-cols-2 gap-8 mt-10">
+                    <div class="border-l-4 border-yellow-600 pl-6">
+                        <span class="block text-4xl font-bold text-white mb-2">+15</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Años de Experiencia</span>
                     </div>
-                    <div class="border-l-2 border-yellow-600 pl-4">
-                        <span class="block text-3xl font-bold text-white">100%</span>
-                        <span class="text-sm text-gray-500 uppercase">Cumplimiento HSE</span>
+                    <div class="border-l-4 border-yellow-600 pl-6">
+                        <span class="block text-4xl font-bold text-white mb-2">100%</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Cumplimiento HSE</span>
                     </div>
                 </div>
             </div>
 
             <div class="relative reveal delay-200">
-                <div class="absolute -inset-4 bg-yellow-600/20 rounded-lg blur-lg"></div>
-                <img src="nosotros-equipo.jpg" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80'" alt="Equipo JMAC" class="relative w-full rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                <div class="absolute -inset-4 bg-yellow-600/10 rounded-3xl blur-2xl"></div>
+                <img src="nosotros-equipo.jpg" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80'" alt="Equipo JMAC" class="relative w-full rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 object-cover h-[500px]">
             </div>
         </div>
     </section>
 
-    <!-- MISIÓN, VISIÓN Y POLÍTICA (Nuevo Bloque Estructurado) -->
-    <section id="filosofia" class="py-20 px-6 bg-[#181b21]">
+    <!-- MISIÓN, VISIÓN Y POLÍTICA -->
+    <section id="filosofia" class="py-32 px-6 bg-[#181b21]">
         <div class="max-w-7xl mx-auto">
             
-            <div class="text-center mb-12 reveal">
-                <h2 class="font-heading text-3xl font-bold text-white">Filosofía Corporativa</h2>
+            <div class="text-center mb-20 reveal">
+                <h2 class="font-heading text-4xl font-bold text-white mb-4">Filosofía Corporativa</h2>
                 <div class="accent-line mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <!-- Misión -->
-                <div class="card-corp p-8 rounded reveal">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-10 h-10 bg-yellow-600/20 rounded flex items-center justify-center text-yellow-500">
-                            <i class="fa-solid fa-rocket"></i>
-                        </div>
-                        <h3 class="font-bold text-xl text-white">Misión</h3>
+                <div class="card-corp p-10 rounded-2xl reveal hover:-translate-y-2 transition-transform bg-[#0f1115] border-t-4 border-yellow-600 shadow-xl">
+                    <div class="w-14 h-14 bg-yellow-600/10 rounded-full flex items-center justify-center text-yellow-500 mb-6 mx-auto">
+                        <i class="fa-solid fa-rocket text-2xl"></i>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
-                        Planificar, diseñar y construir con excelente calidad, creando permanentemente fuentes de trabajo y contribuyendo positivamente al progreso y bienestar del país, generando una imagen de confianza con entrega total a nuestros clientes, proveedores, miembros de nuestra organización y de la comunidad.
+                    <h3 class="font-bold text-2xl text-white mb-6 text-center">Misión</h3>
+                    <p class="text-gray-400 leading-relaxed text-justify">
+                        Planificar, diseñar y construir con excelente calidad, creando permanentemente fuentes de trabajo y contribuyendo positivamente al progreso y bienestar del país.
                     </p>
                 </div>
 
                 <!-- Visión -->
-                <div class="card-corp p-8 rounded reveal delay-100">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-10 h-10 bg-yellow-600/20 rounded flex items-center justify-center text-yellow-500">
-                            <i class="fa-solid fa-eye"></i>
-                        </div>
-                        <h3 class="font-bold text-xl text-white">Visión</h3>
+                <div class="card-corp p-10 rounded-2xl reveal delay-100 hover:-translate-y-2 transition-transform bg-[#0f1115] border-t-4 border-gray-700 hover:border-yellow-600 shadow-xl">
+                    <div class="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center text-white mb-6 mx-auto">
+                        <i class="fa-solid fa-eye text-2xl"></i>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
-                        Dar servicios al sector industrial, impulsando producción, con un equipo humano que se destaca por su profesionalismo, integridad, responsabilidad y compromiso para lograr, mediante el mejoramiento continuo, clientes altamente satisfechos con nuestras obras y servicios.
+                    <h3 class="font-bold text-2xl text-white mb-6 text-center">Visión</h3>
+                    <p class="text-gray-400 leading-relaxed text-justify">
+                        Dar servicios al sector industrial, impulsando producción, con un equipo humano que se destaca por su profesionalismo, integridad y responsabilidad.
                     </p>
                 </div>
 
-                <!-- Política de Calidad -->
-                <div class="card-corp p-8 rounded reveal delay-200">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-10 h-10 bg-yellow-600/20 rounded flex items-center justify-center text-yellow-500">
-                            <i class="fa-solid fa-certificate"></i>
-                        </div>
-                        <h3 class="font-bold text-xl text-white">Política de Calidad</h3>
+                <!-- Política -->
+                <div class="card-corp p-10 rounded-2xl reveal delay-200 hover:-translate-y-2 transition-transform bg-[#0f1115] border-t-4 border-gray-700 hover:border-yellow-600 shadow-xl">
+                    <div class="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center text-white mb-6 mx-auto">
+                        <i class="fa-solid fa-certificate text-2xl"></i>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
-                        JMac es una empresa de servicios, innovadora, que se destaca en sus proyectos, experiencia y compromiso, brindando seguridad para sus clientes. Además, es un grupo comprometido, ágil y flexible, que continúa realizando alianzas estratégicas para generar valor a la empresa.
+                    <h3 class="font-bold text-2xl text-white mb-6 text-center">Política de Calidad</h3>
+                    <p class="text-gray-400 leading-relaxed text-justify">
+                        JMac es una empresa de servicios innovadora, comprometida con la seguridad, que genera valor a través de alianzas estratégicas y cumplimiento normativo.
                     </p>
                 </div>
             </div>
 
-            <!-- Valores Empresariales -->
-            <div class="mt-16 reveal">
-                <h4 class="text-center text-gray-500 text-xs uppercase tracking-[0.2em] mb-8">Nuestros Valores Empresariales</h4>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <span class="px-4 py-2 bg-[#0f1115] border border-gray-700 rounded-full text-xs text-gray-300 hover:border-yellow-500 transition-colors">Calidad Humana</span>
-                    <span class="px-4 py-2 bg-[#0f1115] border border-gray-700 rounded-full text-xs text-gray-300 hover:border-yellow-500 transition-colors">Iniciativa y Dinamismo</span>
-                    <span class="px-4 py-2 bg-[#0f1115] border border-gray-700 rounded-full text-xs text-gray-300 hover:border-yellow-500 transition-colors">Creatividad</span>
-                    <span class="px-4 py-2 bg-[#0f1115] border border-gray-700 rounded-full text-xs text-gray-300 hover:border-yellow-500 transition-colors">Proactividad</span>
-                    <span class="px-4 py-2 bg-[#0f1115] border border-gray-700 rounded-full text-xs text-gray-300 hover:border-yellow-500 transition-colors">Eficiencia y Eficacia</span>
-                    <span class="px-4 py-2 bg-[#0f1115] border border-gray-700 rounded-full text-xs text-gray-300 hover:border-yellow-500 transition-colors">Trabajo en Equipo</span>
-                    <span class="px-4 py-2 bg-[#0f1115] border border-gray-700 rounded-full text-xs text-gray-300 hover:border-yellow-500 transition-colors">Honestidad y Lealtad</span>
-                    <span class="px-4 py-2 bg-[#0f1115] border border-gray-700 rounded-full text-xs text-gray-300 hover:border-yellow-500 transition-colors">Transparencia</span>
+            <!-- Valores (Tags) -->
+            <div class="mt-20 reveal text-center">
+                <p class="text-gray-500 text-sm uppercase tracking-[0.2em] mb-10">Nuestros Valores</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <span class="px-6 py-3 bg-[#0f1115] border border-gray-700 rounded-full text-sm text-gray-300 hover:border-yellow-500 hover:text-white transition-all cursor-default">Calidad Humana</span>
+                    <span class="px-6 py-3 bg-[#0f1115] border border-gray-700 rounded-full text-sm text-gray-300 hover:border-yellow-500 hover:text-white transition-all cursor-default">Iniciativa</span>
+                    <span class="px-6 py-3 bg-[#0f1115] border border-gray-700 rounded-full text-sm text-gray-300 hover:border-yellow-500 hover:text-white transition-all cursor-default">Creatividad</span>
+                    <span class="px-6 py-3 bg-[#0f1115] border border-gray-700 rounded-full text-sm text-gray-300 hover:border-yellow-500 hover:text-white transition-all cursor-default">Eficiencia</span>
+                    <span class="px-6 py-3 bg-[#0f1115] border border-gray-700 rounded-full text-sm text-gray-300 hover:border-yellow-500 hover:text-white transition-all cursor-default">Honestidad</span>
                 </div>
             </div>
 
@@ -282,95 +273,94 @@
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" class="py-24 px-6 md:px-12 bg-[#0f1115]">
+    <section id="servicios" class="py-32 px-6 md:px-12 bg-[#0f1115]">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h4 class="text-yellow-500 font-bold uppercase tracking-widest text-sm">Nuestro Portafolio</h4>
-                <h2 class="font-heading text-3xl md:text-5xl font-bold text-white mt-2">Servicios Especializados</h2>
-                <div class="accent-line mx-auto"></div>
+            <div class="text-center mb-24 reveal">
+                <h4 class="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-4">Nuestro Portafolio</h4>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white">Servicios Especializados</h2>
+                <div class="accent-line mx-auto mt-6"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
-                <!-- Se llena con JS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="services-grid">
+                <!-- JS generará las cards -->
             </div>
         </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="py-24 px-6 md:px-12 bg-[#0f1115]">
-        <div class="max-w-6xl mx-auto bg-[#181b21] rounded-lg overflow-hidden shadow-2xl flex flex-col md:flex-row">
+    <section id="contacto" class="py-32 px-6 md:px-12 bg-[#0f1115]">
+        <div class="max-w-6xl mx-auto bg-[#181b21] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-white/5">
             
-            <div class="md:w-5/12 bg-yellow-600 p-10 text-black flex flex-col justify-between relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-xl"></div>
+            <div class="md:w-5/12 bg-yellow-600 p-12 text-black flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/20 rounded-full blur-2xl"></div>
                 
                 <div>
-                    <h3 class="font-heading text-2xl font-bold mb-6">Contáctenos</h3>
-                    <p class="text-black/80 mb-8 font-medium">Soporte técnico y presencial cuando Ud. lo necesite.</p>
+                    <h3 class="font-heading text-3xl font-bold mb-8">Contáctenos</h3>
+                    <p class="text-black/80 mb-10 font-medium text-lg leading-relaxed">Estamos listos para atender sus requerimientos en planta o campo.</p>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-black/10 rounded flex items-center justify-center flex-shrink-0">
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-5">
+                            <div class="w-12 h-12 bg-black/10 rounded-full flex items-center justify-center flex-shrink-0">
                                 <i class="fa-solid fa-location-dot text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold">Ubicación</h5>
+                                <h5 class="font-bold text-lg">Ubicación</h5>
                                 <p class="text-sm">Guayaquil - Ecuador</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-black/10 rounded flex items-center justify-center flex-shrink-0">
+                        <div class="flex items-center gap-5">
+                            <div class="w-12 h-12 bg-black/10 rounded-full flex items-center justify-center flex-shrink-0">
                                 <i class="fa-solid fa-envelope text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold">Correo Electrónico</h5>
-                                <p class="text-sm break-all font-mono" id="display-email">cargando...</p>
+                                <h5 class="font-bold text-lg">Correo</h5>
+                                <p class="text-sm break-all font-mono font-bold opacity-80" id="display-email">cargando...</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-black/10 rounded flex items-center justify-center flex-shrink-0">
+                        <div class="flex items-center gap-5">
+                            <div class="w-12 h-12 bg-black/10 rounded-full flex items-center justify-center flex-shrink-0">
                                 <i class="fa-solid fa-phone text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold">Teléfonos</h5>
-                                <p class="text-sm font-mono" id="display-phone">cargando...</p>
-                                <p class="text-xs mt-1">0960902701</p>
+                                <h5 class="font-bold text-lg">Llámenos</h5>
+                                <p class="text-sm font-mono font-bold opacity-80" id="display-phone">cargando...</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="md:w-7/12 p-10 md:p-12">
-                <form id="contactForm" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="md:w-7/12 p-12 bg-[#181b21]">
+                <form id="contactForm" class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                            <label class="block text-gray-500 text-xs uppercase mb-2">Nombre</label>
-                            <input type="text" id="formName" class="w-full bg-[#0f1115] border border-gray-700 p-3 text-white rounded focus:border-yellow-500 outline-none" placeholder="Su Nombre">
+                            <label class="block text-gray-500 text-xs uppercase mb-3 tracking-wider">Nombre</label>
+                            <input type="text" id="formName" class="w-full bg-[#0f1115] border border-gray-700 p-4 text-white rounded-xl focus:border-yellow-500 outline-none transition-colors" placeholder="Su Nombre">
                         </div>
                         <div>
-                            <label class="block text-gray-500 text-xs uppercase mb-2">Empresa</label>
-                            <input type="text" id="formCompany" class="w-full bg-[#0f1115] border border-gray-700 p-3 text-white rounded focus:border-yellow-500 outline-none" placeholder="Nombre Empresa">
+                            <label class="block text-gray-500 text-xs uppercase mb-3 tracking-wider">Empresa</label>
+                            <input type="text" id="formCompany" class="w-full bg-[#0f1115] border border-gray-700 p-4 text-white rounded-xl focus:border-yellow-500 outline-none transition-colors" placeholder="Nombre Empresa">
                         </div>
                     </div>
                     
                     <div>
-                        <label class="block text-gray-500 text-xs uppercase mb-2">Email</label>
-                        <input type="email" id="formEmail" class="w-full bg-[#0f1115] border border-gray-700 p-3 text-white rounded focus:border-yellow-500 outline-none" placeholder="contacto@empresa.com">
+                        <label class="block text-gray-500 text-xs uppercase mb-3 tracking-wider">Email</label>
+                        <input type="email" id="formEmail" class="w-full bg-[#0f1115] border border-gray-700 p-4 text-white rounded-xl focus:border-yellow-500 outline-none transition-colors" placeholder="contacto@empresa.com">
                     </div>
 
                     <div>
-                        <label class="block text-gray-500 text-xs uppercase mb-2">Mensaje</label>
-                        <textarea id="formMsg" rows="3" class="w-full bg-[#0f1115] border border-gray-700 p-3 text-white rounded focus:border-yellow-500 outline-none" placeholder="¿En qué podemos ayudarle?"></textarea>
+                        <label class="block text-gray-500 text-xs uppercase mb-3 tracking-wider">Mensaje</label>
+                        <textarea id="formMsg" rows="4" class="w-full bg-[#0f1115] border border-gray-700 p-4 text-white rounded-xl focus:border-yellow-500 outline-none transition-colors" placeholder="¿En qué podemos ayudarle?"></textarea>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button type="button" onclick="sendToWhatsApp()" class="flex-1 bg-[#25d366] text-white font-bold uppercase px-6 py-3 text-sm hover:bg-[#20bd5a] transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-green-900/50 rounded">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Enviar WhatsApp
+                    <div class="flex flex-col sm:flex-row gap-6 pt-4">
+                        <button type="button" onclick="sendToWhatsApp()" class="flex-1 bg-[#25d366] text-white font-bold uppercase px-8 py-3 text-sm hover:bg-[#20bd5a] transition-all flex items-center justify-center gap-3 shadow-lg hover:shadow-green-900/50 rounded-full">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
                         </button>
-                        <button type="button" onclick="sendToEmail()" class="flex-1 bg-white text-black font-bold uppercase px-6 py-3 text-sm hover:bg-gray-200 transition-all flex items-center justify-center gap-2 shadow-lg rounded">
-                            <i class="fa-solid fa-envelope text-lg"></i> Enviar Correo
+                        <button type="button" onclick="sendToEmail()" class="flex-1 bg-white text-black font-bold uppercase px-8 py-3 text-sm hover:bg-gray-200 transition-all flex items-center justify-center gap-3 shadow-lg rounded-full">
+                            <i class="fa-solid fa-envelope text-xl"></i> Correo
                         </button>
                     </div>
                 </form>
@@ -379,43 +369,43 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black py-12 border-t border-white/10 text-sm text-center">
-        <p class="text-gray-600 text-xs mb-2">JMAC - TELL ME I'LL HELP YOU</p>
-        <p class="text-gray-600 text-xs">&copy; 2024 JMAC Servicios Industriales. Guayaquil, Ecuador.</p>
+    <footer class="bg-black py-16 border-t border-white/10 text-sm text-center">
+        <div class="mb-6 opacity-50">
+             <i class="fa-solid fa-industry text-4xl"></i>
+        </div>
+        <p class="text-gray-500 text-xs mb-3 tracking-widest uppercase">JMAC - TELL ME I'LL HELP YOU</p>
+        <p class="text-gray-700 text-xs">&copy; 2024 JMAC Servicios Industriales. Guayaquil, Ecuador.</p>
     </footer>
 
-    <!-- Botón Flotante -->
     <a href="#" onclick="sendToWhatsAppSimple(); return false;" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
 
     <!-- MODAL -->
     <div id="serviceModal" class="fixed inset-0 z-[100] modal flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="modal-content bg-[#181b21] w-full max-w-4xl relative rounded-lg overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]">
-            <button class="absolute top-4 right-4 text-white z-10 text-2xl hover:text-yellow-500" onclick="closeModal()">&times;</button>
-            <div class="md:w-1/2 h-64 md:h-auto bg-gray-800">
-                <img id="modalImg" src="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/95 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="modal-content bg-[#181b21] w-full max-w-5xl relative rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] border border-white/10">
+            <button class="absolute top-6 right-6 text-white z-10 text-3xl hover:text-yellow-500 transition-colors bg-black/50 w-10 h-10 rounded-full flex items-center justify-center" onclick="closeModal()">&times;</button>
+            <div class="md:w-1/2 h-72 md:h-auto bg-gray-900">
+                <img id="modalImg" src="" class="w-full h-full object-cover opacity-90">
             </div>
-            <div class="md:w-1/2 p-8 md:p-12 overflow-y-auto">
-                <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider mb-2 block">Detalle del Servicio</span>
-                <h3 id="modalTitle" class="font-heading text-2xl font-bold text-white mb-4"></h3>
-                <p id="modalDesc" class="text-gray-300 text-sm leading-relaxed mb-6"></p>
-                <a href="#contacto" onclick="closeModal()" class="inline-block bg-yellow-600 text-black font-bold uppercase text-xs px-6 py-3 hover:bg-white transition-colors rounded">
+            <div class="md:w-1/2 p-10 md:p-14 overflow-y-auto">
+                <span class="text-yellow-500 text-xs font-bold uppercase tracking-widest mb-4 block">Detalle del Servicio</span>
+                <h3 id="modalTitle" class="font-heading text-3xl font-bold text-white mb-6 leading-tight"></h3>
+                <p id="modalDesc" class="text-gray-300 text-base leading-relaxed mb-10"></p>
+                <a href="#contacto" onclick="closeModal()" class="inline-block bg-yellow-600 text-black font-bold uppercase text-xs px-8 py-4 hover:bg-white transition-colors rounded-full shadow-lg hover:shadow-yellow-600/50">
                     Cotizar este servicio
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT -->
+    <!-- SCRIPTS -->
     <script>
-        // CONFIGURACIÓN REAL
         const PHONE_NUMBER = "593999862681";
         const EMAIL_ADDRESS = "maciasg.77@hotmail.com";
 
         document.getElementById('display-email').innerText = EMAIL_ADDRESS;
         document.getElementById('display-phone').innerText = "0999862681";
 
-        // Lógica de Contacto
         function sendToWhatsApp() {
             const name = document.getElementById('formName').value;
             const company = document.getElementById('formCompany').value;
@@ -439,7 +429,6 @@
             window.open(`https://wa.me/${PHONE_NUMBER}?text=Hola%20JMAC,%20necesito%20más%20información.`, '_blank');
         }
 
-        // Servicios (Data)
         const servicesData = [
             {
                 title: "Centros de Control de Motores (CCM)",
@@ -485,26 +474,24 @@
             }
         ];
 
-        // Renderizado
         const grid = document.getElementById('services-grid');
         servicesData.forEach((s, i) => {
             const card = document.createElement('div');
-            card.className = "card-service p-8 rounded relative overflow-hidden group cursor-pointer reveal";
+            card.className = "card-service p-10 rounded-2xl relative overflow-hidden group cursor-pointer reveal hover:bg-[#1f232b]";
             card.onclick = () => openModal(i);
             card.innerHTML = `
-                <div class="icon-box w-14 h-14 bg-[#2a2f38] text-yellow-500 rounded flex items-center justify-center text-2xl mb-6 group-hover:text-black">
+                <div class="icon-box w-14 h-14 bg-[#2a2f38] text-yellow-500 rounded-full flex items-center justify-center text-3xl mb-8 group-hover:text-black transition-colors shadow-lg">
                     <i class="fa-solid ${s.icon}"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">${s.title}</h3>
-                <p class="text-gray-400 text-sm line-clamp-3 mb-6">${s.desc}</p>
-                <div class="flex items-center text-yellow-500 text-xs font-bold uppercase tracking-wider gap-2">
-                    Ver Detalles <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-yellow-500 transition-colors">${s.title}</h3>
+                <p class="text-gray-400 text-sm line-clamp-3 mb-8 leading-relaxed">${s.desc}</p>
+                <div class="flex items-center text-yellow-500 text-xs font-bold uppercase tracking-wider gap-3">
+                    Ver Detalles <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                 </div>
             `;
             grid.appendChild(card);
         });
 
-        // Modal
         const modal = document.getElementById('serviceModal');
         function openModal(index) {
             const s = servicesData[index];
@@ -518,15 +505,21 @@
         }
         function closeModal() { modal.classList.remove('active'); document.body.style.overflow = 'auto'; }
         
-        // UI Utils
         function toggleMenu() { 
             const m = document.getElementById('mobile-menu');
             m.classList.toggle('hidden'); m.classList.toggle('flex');
         }
+
+        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if(window.scrollY > 50) { nav.classList.add('py-2'); nav.classList.replace('bg-black/80', 'bg-black'); }
-            else { nav.classList.remove('py-2'); nav.classList.replace('bg-black', 'bg-black/80'); }
+            if(window.scrollY > 50) { 
+                nav.classList.add('bg-black', 'shadow-xl', 'py-4'); 
+                nav.classList.remove('bg-transparent', 'py-6');
+            } else { 
+                nav.classList.remove('bg-black', 'shadow-xl', 'py-4'); 
+                nav.classList.add('bg-transparent', 'py-6');
+            }
         });
         
         const observer = new IntersectionObserver((entries) => {
